@@ -11,11 +11,19 @@ import SwiftUI
 struct AlbumEditor: View {
     @State private var selectedItems = [PhotosPickerItem]()
     @Environment(\.modelContext) private var modelContext
-
     @Bindable var album: Album
 
+    let gridItems: [GridItem] = [.init(.adaptive(minimum: 100, maximum: 100))]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            LazyVGrid(columns: gridItems) {
+                ForEach(album.photos, id: \.self) { photo in
+                    Text(photo)
+                }
+            }
+            .listRowBackground(Color.clear)
+        }
             .toolbar {
                 PhotosPicker(selection: $selectedItems, matching: .images) {
                     Label("Select images", systemImage: "photo.badge.plus")
@@ -26,7 +34,14 @@ struct AlbumEditor: View {
                     for item in selectedItems {
                         guard let imageData = try? await item.loadTransferable(type: Data.self) else { continue }
 
-                        
+                        let imageID = UUID().uuidString
+
+                        do {
+                            try imageData.write(to: imageID.documentURL)
+                            album.photos.append(imageID)
+                        } catch {
+                            print("Failed to write image to \(imageID.documentURL): \(error.localizedDescription)")
+                        }
                     }
 
                     selectedItems.removeAll()
