@@ -10,6 +10,7 @@ import SwiftUI
 struct SlideshowViewer: View {
     @Environment(\.dismiss) private var dismiss
     @State private var currentImageIndex = 0
+    @State private var isZoomed = false
     var album: Album
 
 
@@ -19,12 +20,21 @@ struct SlideshowViewer: View {
         } label: {
             DocumentsImageView(url: album.photos[currentImageIndex].documentURL)
         }
+        .scaleEffect(isZoomed ? 1.25 : 1)
+        .ignoresSafeArea()
+        .persistentSystemOverlays(.hidden)
+        .statusBarHidden()
+        .background(.black)
         .task {
             changeSlide()
         }
     }
 
     func changeSlide() {
+        withAnimation(.linear(duration: Double(album.speed))) {
+            isZoomed.toggle()
+        }
+
         Task {
             try await Task.sleep(for: .seconds(album.speed))
 
