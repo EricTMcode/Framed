@@ -24,6 +24,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Framed")
+            .navigationDestination(for: Album.self, destination: AlbumEditor.init)
             .toolbar {
                 Button("Add new album", systemImage: "plus", action: createNewAlbum)
             }
