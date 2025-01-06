@@ -6,17 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		079686F32D2C07E10055BB23 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686ED2D2C07E10055BB23 /* Album.swift */; };
+		079686F42D2C07E10055BB23 /* AlbumEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686EE2D2C07E10055BB23 /* AlbumEditor.swift */; };
+		079686F52D2C07E10055BB23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686F02D2C07E10055BB23 /* ContentView.swift */; };
+		079686F62D2C07E10055BB23 /* FramedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686F12D2C07E10055BB23 /* FramedApp.swift */; };
+		079686F72D2C07E10055BB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079686EB2D2C07E10055BB23 /* Preview Assets.xcassets */; };
+		079686F82D2C07E10055BB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079686EF2D2C07E10055BB23 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		079686D42D2C02E60055BB23 /* Framed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Framed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		079686EB2D2C07E10055BB23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		079686ED2D2C07E10055BB23 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		079686EE2D2C07E10055BB23 /* AlbumEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEditor.swift; sourceTree = "<group>"; };
+		079686EF2D2C07E10055BB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		079686F02D2C07E10055BB23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		079686F12D2C07E10055BB23 /* FramedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramedApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		079686D62D2C02E60055BB23 /* Framed */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Framed;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		079686D12D2C02E60055BB23 /* Frameworks */ = {
@@ -32,7 +39,7 @@
 		079686CB2D2C02E60055BB23 = {
 			isa = PBXGroup;
 			children = (
-				079686D62D2C02E60055BB23 /* Framed */,
+				079686F22D2C07E10055BB23 /* Framed */,
 				079686D52D2C02E60055BB23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +50,27 @@
 				079686D42D2C02E60055BB23 /* Framed.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		079686EC2D2C07E10055BB23 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				079686EB2D2C07E10055BB23 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		079686F22D2C07E10055BB23 /* Framed */ = {
+			isa = PBXGroup;
+			children = (
+				079686EC2D2C07E10055BB23 /* Preview Content */,
+				079686ED2D2C07E10055BB23 /* Album.swift */,
+				079686EE2D2C07E10055BB23 /* AlbumEditor.swift */,
+				079686EF2D2C07E10055BB23 /* Assets.xcassets */,
+				079686F02D2C07E10055BB23 /* ContentView.swift */,
+				079686F12D2C07E10055BB23 /* FramedApp.swift */,
+			);
+			path = Framed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +87,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				079686D62D2C02E60055BB23 /* Framed */,
 			);
 			name = Framed;
 			packageProductDependencies = (
@@ -109,6 +134,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079686F72D2C07E10055BB23 /* Preview Assets.xcassets in Resources */,
+				079686F82D2C07E10055BB23 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079686F32D2C07E10055BB23 /* Album.swift in Sources */,
+				079686F42D2C07E10055BB23 /* AlbumEditor.swift in Sources */,
+				079686F52D2C07E10055BB23 /* ContentView.swift in Sources */,
+				079686F62D2C07E10055BB23 /* FramedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
