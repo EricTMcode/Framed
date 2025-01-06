@@ -13,6 +13,7 @@
 		079686F62D2C07E10055BB23 /* FramedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686F12D2C07E10055BB23 /* FramedApp.swift */; };
 		079686F72D2C07E10055BB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079686EB2D2C07E10055BB23 /* Preview Assets.xcassets */; };
 		079686F82D2C07E10055BB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079686EF2D2C07E10055BB23 /* Assets.xcassets */; };
+		079686FA2D2C0D6B0055BB23 /* String-URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686F92D2C0D6B0055BB23 /* String-URLs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		079686EF2D2C07E10055BB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		079686F02D2C07E10055BB23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		079686F12D2C07E10055BB23 /* FramedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramedApp.swift; sourceTree = "<group>"; };
+		079686F92D2C0D6B0055BB23 /* String-URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-URLs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				079686EC2D2C07E10055BB23 /* Preview Content */,
 				079686ED2D2C07E10055BB23 /* Album.swift */,
 				079686EE2D2C07E10055BB23 /* AlbumEditor.swift */,
+				079686F92D2C0D6B0055BB23 /* String-URLs.swift */,
 				079686EF2D2C07E10055BB23 /* Assets.xcassets */,
 				079686F02D2C07E10055BB23 /* ContentView.swift */,
 				079686F12D2C07E10055BB23 /* FramedApp.swift */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079686FA2D2C0D6B0055BB23 /* String-URLs.swift in Sources */,
 				079686F32D2C07E10055BB23 /* Album.swift in Sources */,
 				079686F42D2C07E10055BB23 /* AlbumEditor.swift in Sources */,
 				079686F52D2C07E10055BB23 /* ContentView.swift in Sources */,
