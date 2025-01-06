@@ -11,6 +11,7 @@ import SwiftUI
 struct AlbumEditor: View {
     @State private var selectedItems = [PhotosPickerItem]()
     @Environment(\.modelContext) private var modelContext
+    @State private var slideshowAlbum: Album?
     @Bindable var album: Album
 
     let gridItems: [GridItem] = [.init(.adaptive(minimum: 100, maximum: 100))]
@@ -19,7 +20,9 @@ struct AlbumEditor: View {
         Form {
             LazyVGrid(columns: gridItems) {
                 ForEach(album.photos, id: \.self) { photo in
-                    Text(photo)
+                    DocumentsImageView(url: photo.documentURL)
+                        .frame(width: 100, height: 100)
+                        .clipShape(.rect(cornerRadius: 10))
                 }
             }
             .listRowBackground(Color.clear)
@@ -28,7 +31,15 @@ struct AlbumEditor: View {
                 PhotosPicker(selection: $selectedItems, matching: .images) {
                     Label("Select images", systemImage: "photo.badge.plus")
                 }
+
+                if album.photos.isEmpty == false {
+                    Button("Start slideshow", systemImage: "play") {
+                        slideshowAlbum = album
+                    }
+                    .symbolVariant(.fill)
+                }
             }
+            .fullScreenCover(item: $slideshowAlbum, content: SlideshowViewer.init)
             .onChange(of: selectedItems) {
                 Task {
                     for item in selectedItems {
