@@ -16,6 +16,7 @@
 		079686FA2D2C0D6B0055BB23 /* String-URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686F92D2C0D6B0055BB23 /* String-URLs.swift */; };
 		079686FC2D2C0FDF0055BB23 /* DocumentsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686FB2D2C0FDF0055BB23 /* DocumentsImageView.swift */; };
 		079686FE2D2C11960055BB23 /* SlideshowViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686FD2D2C11960055BB23 /* SlideshowViewer.swift */; };
+		079687002D2C26390055BB23 /* UIImage-Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079686FF2D2C26390055BB23 /* UIImage-Thumbnail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		079686F92D2C0D6B0055BB23 /* String-URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-URLs.swift"; sourceTree = "<group>"; };
 		079686FB2D2C0FDF0055BB23 /* DocumentsImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsImageView.swift; sourceTree = "<group>"; };
 		079686FD2D2C11960055BB23 /* SlideshowViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowViewer.swift; sourceTree = "<group>"; };
+		079686FF2D2C26390055BB23 /* UIImage-Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Thumbnail.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				079686EC2D2C07E10055BB23 /* Preview Content */,
 				079686ED2D2C07E10055BB23 /* Album.swift */,
 				079686EE2D2C07E10055BB23 /* AlbumEditor.swift */,
+				079686FF2D2C26390055BB23 /* UIImage-Thumbnail.swift */,
 				079686FD2D2C11960055BB23 /* SlideshowViewer.swift */,
 				079686FB2D2C0FDF0055BB23 /* DocumentsImageView.swift */,
 				079686F92D2C0D6B0055BB23 /* String-URLs.swift */,
@@ -159,6 +162,7 @@
 				079686FE2D2C11960055BB23 /* SlideshowViewer.swift in Sources */,
 				079686FC2D2C0FDF0055BB23 /* DocumentsImageView.swift in Sources */,
 				079686F32D2C07E10055BB23 /* Album.swift in Sources */,
+				079687002D2C26390055BB23 /* UIImage-Thumbnail.swift in Sources */,
 				079686F42D2C07E10055BB23 /* AlbumEditor.swift in Sources */,
 				079686F52D2C07E10055BB23 /* ContentView.swift in Sources */,
 				079686F62D2C07E10055BB23 /* FramedApp.swift in Sources */,
