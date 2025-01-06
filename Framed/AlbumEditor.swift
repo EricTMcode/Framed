@@ -18,47 +18,71 @@ struct AlbumEditor: View {
 
     var body: some View {
         Form {
+            Section {
+                Picker("Speed", selection: $album.speed) {
+                    Text("Slow (60s)").tag(60)
+                    Text("Medium (30s)").tag(30)
+                    Text("Fast (10s)").tag(10)
+
+#if DEBUG
+                    Text("Ultra (3s)").tag(3)
+#endif
+                }
+            }
+
             LazyVGrid(columns: gridItems) {
                 ForEach(album.photos, id: \.self) { photo in
-                    DocumentsImageView(url: photo.documentURL)
-                        .frame(width: 100, height: 100)
-                        .clipShape(.rect(cornerRadius: 10))
+                    Menu {
+                        Button("Delete", systemImage: "trash", role: .destructive) {
+                            album.photos.removeAll { element in
+                                element == photo
+                            }
+
+                            try? modelContext.save()
+                        }
+                    } label: {
+                        DocumentsImageView(url: photo.documentURL)
+                            .frame(width: 100, height: 100)
+                            .clipShape(.rect(cornerRadius: 10))
+                    }
                 }
             }
             .listRowBackground(Color.clear)
         }
-            .toolbar {
-                PhotosPicker(selection: $selectedItems, matching: .images) {
-                    Label("Select images", systemImage: "photo.badge.plus")
-                }
-
-                if album.photos.isEmpty == false {
-                    Button("Start slideshow", systemImage: "play") {
-                        slideshowAlbum = album
-                    }
-                    .symbolVariant(.fill)
-                }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle($album.name)
+        .toolbar {
+            PhotosPicker(selection: $selectedItems, matching: .images) {
+                Label("Select images", systemImage: "photo.badge.plus")
             }
-            .fullScreenCover(item: $slideshowAlbum, content: SlideshowViewer.init)
-            .onChange(of: selectedItems) {
-                Task {
-                    for item in selectedItems {
-                        guard let imageData = try? await item.loadTransferable(type: Data.self) else { continue }
 
-                        let imageID = UUID().uuidString
-
-                        do {
-                            try imageData.write(to: imageID.documentURL)
-                            album.photos.append(imageID)
-                        } catch {
-                            print("Failed to write image to \(imageID.documentURL): \(error.localizedDescription)")
-                        }
-                    }
-
-                    selectedItems.removeAll()
-                    try? modelContext.save()
+            if album.photos.isEmpty == false {
+                Button("Start slideshow", systemImage: "play") {
+                    slideshowAlbum = album
                 }
+                .symbolVariant(.fill)
             }
+        }
+        .fullScreenCover(item: $slideshowAlbum, content: SlideshowViewer.init)
+        .onChange(of: selectedItems) {
+            Task {
+                for item in selectedItems {
+                    guard let imageData = try? await item.loadTransferable(type: Data.self) else { continue }
+
+                    let imageID = UUID().uuidString
+
+                    do {
+                        try imageData.write(to: imageID.documentURL)
+                        album.photos.append(imageID)
+                    } catch {
+                        print("Failed to write image to \(imageID.documentURL): \(error.localizedDescription)")
+                    }
+                }
+
+                selectedItems.removeAll()
+                try? modelContext.save()
+            }
+        }
     }
 }
 
