@@ -15,6 +15,7 @@
 		079687042D2D59AE0055BB23 /* AlbumEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079687032D2D59AE0055BB23 /* AlbumEditor.swift */; };
 		079687062D2D5D2E0055BB23 /* String-URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079687052D2D5D2E0055BB23 /* String-URLs.swift */; };
 		079687082D2D64690055BB23 /* DocumentsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079687072D2D64690055BB23 /* DocumentsImageView.swift */; };
+		0796870A2D2D681F0055BB23 /* SlideshowViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079687092D2D681F0055BB23 /* SlideshowViewer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		079687032D2D59AE0055BB23 /* AlbumEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEditor.swift; sourceTree = "<group>"; };
 		079687052D2D5D2E0055BB23 /* String-URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-URLs.swift"; sourceTree = "<group>"; };
 		079687072D2D64690055BB23 /* DocumentsImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsImageView.swift; sourceTree = "<group>"; };
+		079687092D2D681F0055BB23 /* SlideshowViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowViewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				079686EF2D2C07E10055BB23 /* Assets.xcassets */,
 				079686F02D2C07E10055BB23 /* ContentView.swift */,
 				079687032D2D59AE0055BB23 /* AlbumEditor.swift */,
+				079687092D2D681F0055BB23 /* SlideshowViewer.swift */,
 				079687072D2D64690055BB23 /* DocumentsImageView.swift */,
 				079687052D2D5D2E0055BB23 /* String-URLs.swift */,
 				079686F12D2C07E10055BB23 /* FramedApp.swift */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				079687062D2D5D2E0055BB23 /* String-URLs.swift in Sources */,
+				0796870A2D2D681F0055BB23 /* SlideshowViewer.swift in Sources */,
 				079687082D2D64690055BB23 /* DocumentsImageView.swift in Sources */,
 				079687042D2D59AE0055BB23 /* AlbumEditor.swift in Sources */,
 				079687022D2D57B50055BB23 /* Model.swift in Sources */,

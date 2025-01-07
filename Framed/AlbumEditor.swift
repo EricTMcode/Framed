@@ -19,7 +19,9 @@ struct AlbumEditor: View {
         Form {
             LazyVGrid(columns: gridItems) {
                 ForEach(album.photos, id: \.self) { photo in
-                    Text(photo)
+                    DocumentsImageView(url: photo.documentsURL)
+                        .frame(width: 100, height: 100)
+                        .clipShape(.rect(cornerRadius: 10))
                 }
             }
             .listRowBackground(Color.clear)
