@@ -12,6 +12,7 @@
 		079686F72D2C07E10055BB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079686EB2D2C07E10055BB23 /* Preview Assets.xcassets */; };
 		079686F82D2C07E10055BB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079686EF2D2C07E10055BB23 /* Assets.xcassets */; };
 		079687022D2D57B50055BB23 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079687012D2D57B50055BB23 /* Model.swift */; };
+		079687042D2D59AE0055BB23 /* AlbumEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079687032D2D59AE0055BB23 /* AlbumEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		079686F02D2C07E10055BB23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		079686F12D2C07E10055BB23 /* FramedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramedApp.swift; sourceTree = "<group>"; };
 		079687012D2D57B50055BB23 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		079687032D2D59AE0055BB23 /* AlbumEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,9 @@
 				079686EC2D2C07E10055BB23 /* Preview Content */,
 				079686EF2D2C07E10055BB23 /* Assets.xcassets */,
 				079686F02D2C07E10055BB23 /* ContentView.swift */,
-				079687012D2D57B50055BB23 /* Model.swift */,
+				079687032D2D59AE0055BB23 /* AlbumEditor.swift */,
 				079686F12D2C07E10055BB23 /* FramedApp.swift */,
+				079687012D2D57B50055BB23 /* Model.swift */,
 			);
 			path = Framed;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079687042D2D59AE0055BB23 /* AlbumEditor.swift in Sources */,
 				079687022D2D57B50055BB23 /* Model.swift in Sources */,
 				079686F52D2C07E10055BB23 /* ContentView.swift in Sources */,
 				079686F62D2C07E10055BB23 /* FramedApp.swift in Sources */,
