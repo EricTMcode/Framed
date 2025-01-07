@@ -22,6 +22,7 @@ struct ContentView: View {
                         Text("\(album.name) (\(album.photos.count))")
                     }
                 }
+                .onDelete(perform: deleteAlbum)
             }
             .navigationTitle("Framed")
             .navigationDestination(for: Album.self, destination: AlbumEditor.init)
@@ -36,6 +37,13 @@ struct ContentView: View {
         modelContext.insert(newAlbum)
         try? modelContext.save()
         selectedAlbum = [newAlbum]
+    }
+
+    func deleteAlbum(_ indexSet: IndexSet) {
+        for item in indexSet {
+            let album = albums[item]
+            modelContext.delete(album)
+        }
     }
 }
 

@@ -31,9 +31,19 @@ struct AlbumEditor: View {
 
             LazyVGrid(columns: gridItems) {
                 ForEach(album.photos, id: \.self) { photo in
-                    DocumentsImageView(url: photo.documentsURL)
-                        .frame(width: 100, height: 100)
-                        .clipShape(.rect(cornerRadius: 10))
+                    Menu {
+                        Button("Delete", systemImage: "trash", role: .destructive) {
+                            album.photos.removeAll { element in
+                                element == photo
+                            }
+
+                            try? modelContext.save()
+                        }
+                    } label: {
+                        DocumentsImageView(url: photo.documentsURL)
+                            .frame(width: 100, height: 100)
+                            .clipShape(.rect(cornerRadius: 10))
+                    }
                 }
             }
             .listRowBackground(Color.clear)
