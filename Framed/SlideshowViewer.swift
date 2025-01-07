@@ -13,6 +13,29 @@ struct SlideshowViewer: View {
     var album: Album
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            dismiss()
+        } label: {
+            DocumentsImageView(url: album.photos[currentImageIndex].documentsURL)
+        }
+        .ignoresSafeArea()
+        .persistentSystemOverlays(.hidden)
+        .statusBarHidden()
+        .background(.black)
+        .task {
+            changeSlide()
+        }
+    }
+
+    func changeSlide() {
+        Task {
+            try await Task.sleep(for: .seconds(album.speed))
+
+            withAnimation(.easeIn(duration: 1)) {
+                currentImageIndex = (currentImageIndex + 1) % album.photos.count
+            }
+
+            changeSlide()
+        }
     }
 }
