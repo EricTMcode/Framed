@@ -11,4 +11,8 @@ extension String {
     var documentsURL: URL {
         URL.documentsDirectory.appending(path: self)
     }
+
+    var thumbnailURL: URL {
+        URL.documentsDirectory.appending(path: "\(self)-thumbnail")
+    }
 }

@@ -40,7 +40,7 @@ struct AlbumEditor: View {
                             try? modelContext.save()
                         }
                     } label: {
-                        DocumentsImageView(url: photo.documentsURL)
+                        DocumentsImageView(url: photo.thumbnailURL)
                             .frame(width: 100, height: 100)
                             .clipShape(.rect(cornerRadius: 10))
                     }
@@ -68,10 +68,14 @@ struct AlbumEditor: View {
                     for item in selectedItems {
                         guard let imageData = try? await item.loadTransferable(type: Data.self) else { continue }
 
+                        guard let uiImage = UIImage(data: imageData) else { continue }
+                        guard let imageThumbnailData = uiImage.createThumbnail(at: CGSize(width: 100, height: 100)) else { continue }
+
                         let imageID = UUID().uuidString
 
                         do {
                             try imageData.write(to: imageID.documentsURL)
+                            try imageThumbnailData.write(to: imageID.thumbnailURL)
                             album.photos.append(imageID)
                         } catch {
                             print("Failed to write image to \(imageID.documentsURL): \(error.localizedDescription)")
