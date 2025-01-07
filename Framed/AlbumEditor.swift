@@ -18,6 +18,17 @@ struct AlbumEditor: View {
 
     var body: some View {
         Form {
+            Section {
+                Picker("Speed", selection: $album.speed) {
+                    Text("Slow (60s)").tag(60)
+                    Text("Medium (30s)").tag(30)
+                    Text("Fast (10s)").tag(10)
+                    #if DEBUG
+                    Text("Ultra (3s)").tag(3)
+                    #endif
+                }
+            }
+
             LazyVGrid(columns: gridItems) {
                 ForEach(album.photos, id: \.self) { photo in
                     DocumentsImageView(url: photo.documentsURL)
@@ -27,6 +38,8 @@ struct AlbumEditor: View {
             }
             .listRowBackground(Color.clear)
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle($album.name)
             .toolbar {
                 PhotosPicker(selection: $selectedItems, matching: .images) {
                     Label("Select images", systemImage: "photo.badge.plus")
